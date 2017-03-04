@@ -1,0 +1,13 @@
+blumix testing
+
+
+
+$ curl -X POST -F "images_file=@fruitbowl.jpg" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classify?api_key={api-key}&version=2016-05-20"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 98403  100    65  100 98338     40  61731  0:00:01  0:00:01 --:--:-- 63566{
+    "status": "ERROR",
+    "statusInfo": "invalid-api-key"
+}
+
+
