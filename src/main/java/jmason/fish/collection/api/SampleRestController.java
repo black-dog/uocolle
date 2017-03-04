@@ -3,6 +3,7 @@ package jmason.fish.collection.api;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -12,6 +13,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.ibm.watson.developer_cloud.visual_recognition.v3.VisualRecognition;
+import com.ibm.watson.developer_cloud.visual_recognition.v3.model.ClassifyImagesOptions;
+import com.ibm.watson.developer_cloud.visual_recognition.v3.model.ImageClassification;
+import com.ibm.watson.developer_cloud.visual_recognition.v3.model.VisualClassification;
+import com.ibm.watson.developer_cloud.visual_recognition.v3.model.VisualClassifier;
 
 /**
  * サンプルのRestコントローラーです
@@ -57,8 +64,37 @@ public class SampleRestController {
 			e.printStackTrace();
 		}
 		System.out.println(file.toString());
+		
+		String target = classfy(file);
+		
 		Map<Object, Object> result = new HashMap<Object, Object>();
 		result.put("sample", "fish-collection");
 		return result;
+	}
+	
+	/**
+	 * bluemix へ データを送り、分類されたデータを取得します。
+	 * @param file
+	 */
+	private String classfy(File file) {
+		String target;
+		VisualRecognition service = new VisualRecognition(VisualRecognition.VERSION_DATE_2016_05_20);
+		service.setApiKey("{api-key}");
+
+		System.out.println("Classify an image");
+		ClassifyImagesOptions options = new ClassifyImagesOptions.Builder()
+		    .images(file)
+		    .build();
+		VisualClassification result = service.classify(options).execute();
+		System.out.println(result);
+		
+		//scoreが一番高いものを返す
+		List<ImageClassification> images = result.getImages();
+		for(ImageClassification ic : images) {
+			List<VisualClassifier> vcs = ic.getClassifiers();
+		}
+		//TODO
+		target = "";
+		return target;
 	}
 }

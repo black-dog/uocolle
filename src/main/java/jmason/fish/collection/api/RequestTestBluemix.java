@@ -28,7 +28,7 @@ import java.net.HttpURLConnection;
 import java.nio.charset.StandardCharsets;
 
 @RestController
-@RequestMapping(value = "bluemix", produces = { MediaType.APPLICATION_JSON_VALUE })
+@RequestMapping(value = "bluemixtest", produces = { MediaType.APPLICATION_JSON_VALUE })
 public class RequestTestBluemix {
 
 	/**
@@ -41,9 +41,11 @@ public class RequestTestBluemix {
 //		testJSON();
 		testJSONPrez();
 		Map<Object, Object> result = new HashMap<Object, Object>();
-		result.put("bluemix", "fish-collection");
+		result.put("bluemixtest", "fish-collection");
 		return result;
 	}
+	
+	
 	
 	private void testJSONFB() {
 		

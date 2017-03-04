@@ -46,7 +46,7 @@ dependencies {
 	compile("javax.servlet:javax.servlet-api:3.1.0")
 	runtime("org.springframework.boot:spring-boot-starter-tomcat")
 //	compile 'org.springframework.cloud:spring-cloud-starter-aws'
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.3.4'
+    compile 'com.ibm.watson.developer_cloud:visual-recognition:3.5.3'
 }
 
 test {

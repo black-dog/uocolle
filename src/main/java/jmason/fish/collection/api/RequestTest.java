@@ -74,17 +74,16 @@ public class RequestTest {
 				connection.setRequestMethod("GET");
 //				connection.setRequestProperty("Accept-Language", "en");
 				
-				if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-					try (InputStreamReader isr = new InputStreamReader(connection.getInputStream(),
+//				if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+//					try (InputStreamReader isr = new InputStreamReader(connection.getInputStream(),
 //							StandardCharsets.UTF_8); BufferedReader reader = new BufferedReader(isr)) {
-							"SJIS"); BufferedReader reader = new BufferedReader(isr)) {
-						String line;
-						while ((line = reader.readLine()) != null) {
-							System.out.println(line);
-							resText.concat(line);
-						}
-					}
-				}
+//						String line;
+//						while ((line = reader.readLine()) != null) {
+//							System.out.println(line);
+//							resText.concat(line);
+//						}
+//					}
+//				}
 			} finally {
 				if (connection != null) {
 					connection.disconnect();
