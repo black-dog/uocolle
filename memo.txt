@@ -39,12 +39,6 @@ http://www.ibm.com/watson/developercloud/visual-recognition/api/v3/
 
 http://dotnsf.blog.jp/archives/1061652807.html
 
-bluemix
-id cotool2007@gmail.com
-pw P@ssw0rd!
-id cotool20079@gmail.com
-pw P@ssw0rd!
-
 https://www.ibm.com/watson/developercloud/doc/visual-recognition/index.html
 
 
