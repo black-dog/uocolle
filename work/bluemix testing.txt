@@ -60,3 +60,150 @@ $ curl -X POST -F "images_file=@fruitbowl.jpg" "https://gateway-a.watsonplatform
     ],
     "images_processed": 1
 }
+
+
+
+
+curl -X POST -F "name=kobatest" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+
+$ curl -X POST -F "name=kobatest" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   313  100   166  100   147     80     71  0:00:02  0:00:02 --:--:--    90{
+  "collection_id": "kobatest_c8ebda",
+  "name": "kobatest",
+  "status": "available",
+  "created": "2017-03-07T14:13:27.083Z",
+  "images": 0,
+  "capacity": 1000000
+}
+
+
+curl -X GET "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/kobatest_c8ebda?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+
+$ curl -X GET "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/kobatest_c8ebda?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   166  100   166    0     0    105      0  0:00:01  0:00:01 --:--:--   106{
+  "collection_id": "kobatest_c8ebda",
+  "name": "kobatest",
+  "status": "available",
+  "created": "2017-03-07T14:13:27.083Z",
+  "images": 0,
+  "capacity": 1000000
+}
+
+
+
+
+curl -X POST -F "image_file=@blue-dress.jpg" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/kobatest_c8ebda/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+
+$ curl -X POST -F "image_file=@blue-dress.jpg" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/kobatest_c8ebda/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  216k  100   168  100  216k     58  76675  0:00:02  0:00:02 --:--:-- 82467{
+  "images": [
+    {
+      "image_id": "9c0cf4",
+      "image_file": "blue-dress.jpg",
+      "created": "2017-03-07T14:16:34.149Z"
+    }
+  ],
+  "images_processed": 1
+}
+
+curl -X POST -F "image_file=@purple-dress.jpg" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/kobatest_c8ebda/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X POST -F "image_file=@red-dress.jpg" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/kobatest_c8ebda/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X POST -F "image_file=@silver-dress.jpg" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/kobatest_c8ebda/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X POST -F "image_file=@silver-dress.jpg" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/kobatest_c8ebda/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 96390  100   170  100 96220     59  33467  0:00:02  0:00:02 --:--:-- 33655{
+  "images": [
+    {
+      "image_id": "d5dba5",
+      "image_file": "purple-dress.jpg",
+      "created": "2017-03-07T14:19:00.986Z"
+    }
+  ],
+  "images_processed": 1
+}
+
+
+$ curl -X POST -F "image_file=@red-dress.jpg" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/kobatest_c8ebda/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  158k  100   167  100  158k     53  51943  0:00:03  0:00:03 --:--:-- 52193{
+  "images": [
+    {
+      "image_id": "6467da",
+      "image_file": "red-dress.jpg",
+      "created": "2017-03-07T14:19:04.651Z"
+    }
+  ],
+  "images_processed": 1
+}
+
+
+$ curl -X POST -F "image_file=@silver-dress.jpg" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/kobatest_c8ebda/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 54493  100   170  100 54323     59  19107  0:00:02  0:00:02 --:--:-- 19208{
+  "images": [
+    {
+      "image_id": "957802",
+      "image_file": "silver-dress.jpg",
+      "created": "2017-03-07T14:19:08.058Z"
+    }
+  ],
+  "images_processed": 1
+}
+
+
+
+
+
+curl -X POST -F "image_file=@silver-dress2.jpg" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/kobatest_c8ebda/find_similar?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+$ curl -X POST -F "image_file=@silver-dress2.jpg" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/kobatest_c8ebda/find_similar?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 43346  100   691  100 42655    320  19784  0:00:02  0:00:02 --:--:-- 21499{
+  "image_file": "silver-dress2.jpg",
+  "similar_images": [
+    {
+      "image_id": "957802",
+      "image_file": "silver-dress.jpg",
+      "score": 0.6870117,
+      "created": "2017-03-07T14:19:08.058Z"
+    },
+    {
+      "image_id": "6467da",
+      "image_file": "red-dress.jpg",
+      "score": 0.5854492,
+      "created": "2017-03-07T14:19:04.651Z"
+    },
+    {
+      "image_id": "d5dba5",
+      "image_file": "purple-dress.jpg",
+      "score": 0.56152344,
+      "created": "2017-03-07T14:19:00.986Z"
+    },
+    {
+      "image_id": "9c0cf4",
+      "image_file": "blue-dress.jpg",
+      "score": 0.54541016,
+      "created": "2017-03-07T14:16:34.149Z"
+    }
+  ],
+  "images_processed": 1
+}
+
+
+
