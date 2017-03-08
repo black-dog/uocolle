@@ -46,3 +46,28 @@ java I/F
 
 https://www.ibm.com/watson/developercloud/visual-recognition/api/v3/?java#list_images
 
+http://www.zukan-bouz.com/
+
+sample metadata
+
+ID
+名前
+特徴
+味
+高級魚
+見分け
+生息地
+毒
+
+
+{  
+   "id":1,
+   "name_ja":"マアジ",
+   "name_en":"Japanese horse-mackerel",
+   "characteristic":"北海道?九州までの沿岸域で群れを作る。アジ科には多数の食用魚があるが、その代表的なもの。単に「アジ」というとマアジのこと。",
+   "taste":"美味",
+   "luxuryfish":"高級",
+   "distinguish":"一年中出回っている。黄色系。（黒系もあり）ゼイゴが力強くつながっている。",
+   "habitat":"北海道南部から東シナ海まで。水深２メートル足らずの港のなかから、水深150メートルの深海まで広く棲息している。",
+   "poison":"なし"
+}
