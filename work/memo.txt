@@ -46,6 +46,9 @@ java I/F
 
 https://www.ibm.com/watson/developercloud/visual-recognition/api/v3/?java#list_images
 
+JavaDoc
+http://watson-developer-cloud.github.io/java-sdk/docs/java-sdk-3.3.1/com/ibm/watson/developer_cloud/visual_recognition/v3/model/VisualClassifier.html
+
 http://www.zukan-bouz.com/
 
 sample metadata
@@ -71,3 +74,83 @@ ID
    "habitat":"北海道南部から東シナ海まで。水深２メートル足らずの港のなかから、水深150メートルの深海まで広く棲息している。",
    "poison":"なし"
 }
+
+
+{
+  "url": "https://gateway-a.watsonplatform.net/visual-recognition/api",
+  "note": "It may take up to 5 minutes for this key to become active",
+  "api_key": "2769cf50001a644bbfedf60df5c846f6a900efcb"
+}
+
+$ curl -X GET "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   423  100   423    0     0    199      0  0:00:02  0:00:02 --:--:--   221{
+  "collections": [
+    {
+      "collection_id": "kobatest_c8ebda",
+      "name": "kobatest",
+      "status": "available",
+      "created": "2017-03-07T14:13:27.083Z",
+      "images": 4,
+      "capacity": 1000000
+    },
+    {
+      "collection_id": "uocolle_7e6c8b",
+      "name": "uocolle",
+      "status": "available",
+      "created": "2017-03-08T08:57:13.685Z",
+      "images": 1,
+      "capacity": 1000000
+    }
+  ]
+}
+
+$ curl -X GET "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/co                                           llections/uocolle_7e6c8b?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&versio                                           n=2016-05-20"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   164  100   164    0     0    120      0  0:00:01  0:00:01 --:--:--   122{
+  "collection_id": "uocolle_7e6c8b",
+  "name": "uocolle",
+  "status": "available",
+  "created": "2017-03-08T08:57:13.685Z",
+  "images": 1,
+  "capacity": 1000000
+}
+
+
+
+https://github.com/watson-developer-cloud/java-sdk
+
+
+curl -X POST -F "image_file=@kasumiaji.jpg" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/find_similar?limit=100&api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+
+$ curl -X POST -F "image_file=@kasumiaji.jpg" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/find_similar?limit=100&api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 15497  100   972  100 14525    493   7376  0:00:01  0:00:01 --:--:--  7557{
+  "image_file": "kasumiaji.jpg",
+  "similar_images": [
+    {
+      "image_id": "8d9fba",
+      "image_file": "01_maaji.jpg",
+      "score": 0.765625,
+      "created": "2017-03-08T09:20:40.233Z",
+      "metadata": {
+        "characteristic": "北海道?九州までの沿岸域で群れを作る。アジ科には多数の食用魚があるが、その代表的なもの。単に「アジ」というとマアジのこと。",
+        "distinguish": "一年中出回っている。黄色系。（黒系もあり）ゼイゴが力強くつながっている。",
+        "habitat": "北海道南部から東シナ海まで。水深２メートル足らずの港のなかから、水深150メートルの深海まで広く棲息している。",
+        "id": 1,
+        "luxuryfish": "高級",
+        "name_en": "Japanese horse-mackerel",
+        "name_ja": "マアジ",
+        "poison": "なし",
+        "taste": "美味"
+      }
+    }
+  ],
+  "images_processed": 1
+}
+
+
