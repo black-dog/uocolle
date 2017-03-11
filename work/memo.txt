@@ -154,3 +154,35 @@ $ curl -X POST -F "image_file=@kasumiaji.jpg" "https://gateway-a.watsonplatform.
 }
 
 
+curl -X GET "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X GET "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+
+curl -X DELETE "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images/8d9fba?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+
+
+curl -X POST -F "image_file=@01maaji00.jpg" -F "metadata=@01maaji00.json" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X POST -F "image_file=@02suma.jpg" -F "metadata=@02suma.json" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X POST -F "image_file=@03sawara.jpg" -F "metadata=@03sawara.json" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X POST -F "image_file=@04akamutu.jpg" -F "metadata=@04akamutu.json" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X POST -F "image_file=@05ankou.jpg" -F "metadata=@05ankou.json" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X POST -F "image_file=@06komonfugu.jpg" -F "metadata=@06komonfugu.json" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X POST -F "image_file=@07ebisudai.jpg" -F "metadata=@07ebisudai.json" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X POST -F "image_file=@08tatiuo01.jpg" -F "metadata=@08tatiuo01.json" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X POST -F "image_file=@09akahaze.jpg" -F "metadata=@09akahaze.json" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X POST -F "image_file=@10hirame.jpg" -F "metadata=@10hirame.json" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+
+
+

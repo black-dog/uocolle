@@ -34,7 +34,10 @@ public class SampleRestController {
 	
 	@Value("${multipart.maxFileSize}")
 	String aaa;
-	
+	@Value("${uocolle.watson.api-key}")
+	String apikey;
+	@Value("${uocolle.watson.collectionid}")
+	String collectionid;
 	/**
 	 * Jsonを返す.
 	 *
@@ -43,7 +46,7 @@ public class SampleRestController {
 	@RequestMapping(method = RequestMethod.GET)
 	public Map<String, String> getSample() {
 		System.out.println(aaa);
-		File file = new File("D:/workspace/uocolle-web/work", "kasumiaji.jpg");
+		File file = new File("C:/workspace/uocolle-web/work", "kasumiaji.jpg");
 		return findSimilarImage(file);
 	}
 
@@ -75,9 +78,9 @@ public class SampleRestController {
 	private Map<String, String> findSimilarImage(File file) {
 		Map<String, String> target = null;
 		VisualRecognition service = new VisualRecognition(VisualRecognition.VERSION_DATE_2016_05_20);
-		service.setApiKey("2769cf50001a644bbfedf60df5c846f6a900efcb");
+		service.setApiKey(apikey);
 		FindSimilarImagesOptions findImageOptions = new FindSimilarImagesOptions.Builder()
-				.collectionId("uocolle_7e6c8b")
+				.collectionId(collectionid)
 				.image(file)
 				.build();
 		List<CollectionImage> similarImages = service.findSimilarImages(findImageOptions).execute();
