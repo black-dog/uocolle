@@ -44,10 +44,10 @@ public class SampleRestController {
 	 * @return 適当な情報.
 	 */
 	@RequestMapping(method = RequestMethod.GET)
-	public Map<String, String> getSample() {
+	public String getSample() {
 		System.out.println(aaa);
 		File file = new File("C:/workspace/uocolle-web/work", "kasumiaji.jpg");
-		return findSimilarImage(file);
+		return "["+findSimilarImage(file)+"]";
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class SampleRestController {
 	 * @return 適当な情報.
 	 */
 	@RequestMapping(method = RequestMethod.POST, produces = {MediaType.MULTIPART_FORM_DATA_VALUE})
-	public Map<String, String> postSample(@RequestParam("file") MultipartFile mFile) {
+	public String postSample(@RequestParam("file") MultipartFile mFile) {
 //		File uploadDir = mkdirs("C:/ユーザー/jmason/デスクトップ");
 		System.out.println(mFile.getSize());
 		File file = new File("C:/workspace", "sample.jpeg");
@@ -68,7 +68,7 @@ public class SampleRestController {
 			e.printStackTrace();
 		}
 		System.out.println(file.toString());
-		return findSimilarImage(file);
+		return "["+findSimilarImage(file)+"]";
 	}
 	
 	/**
