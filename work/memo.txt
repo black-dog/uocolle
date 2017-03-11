@@ -186,3 +186,29 @@ curl -X POST -F "image_file=@10hirame.jpg" -F "metadata=@10hirame.json" "https:/
 
 
 
+curl -X DELETE "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images/368416?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X DELETE "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images/c8499e?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X DELETE "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images/c279d5?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X DELETE "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images/a29c91?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X DELETE "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images/c06816?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X DELETE "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images/85975e?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X DELETE "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images/e7db56?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X DELETE "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images/27d933?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+curl -X DELETE "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images/5a9fdc?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+
+curl -X POST -F "image_file=@02madai.jpg" -F "metadata=@02madai.json" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+
+curl -X POST -F "image_file=@03mahata.jpg" -F "metadata=@03mahata.json" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/collections/uocolle_7e6c8b/images?api_key=2769cf50001a644bbfedf60df5c846f6a900efcb&version=2016-05-20"
+
+
+

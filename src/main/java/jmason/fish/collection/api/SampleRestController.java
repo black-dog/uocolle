@@ -2,6 +2,7 @@ package jmason.fish.collection.api;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -55,8 +56,8 @@ public class SampleRestController {
 	 *
 	 * @return 適当な情報.
 	 */
-	@RequestMapping(method = RequestMethod.POST, produces = {MediaType.MULTIPART_FORM_DATA_VALUE})
-	public String postSample(@RequestParam("file") MultipartFile mFile) {
+	@RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "multipart/form-data")
+	public List<Map<String, String>> postSample(@RequestParam("file") MultipartFile mFile) {
 //		File uploadDir = mkdirs("C:/ユーザー/jmason/デスクトップ");
 		System.out.println(mFile.getSize());
 		File file = new File("C:/workspace", "sample.jpeg");
@@ -68,15 +69,15 @@ public class SampleRestController {
 			e.printStackTrace();
 		}
 		System.out.println(file.toString());
-		return "["+findSimilarImage(file)+"]";
+		return findSimilarImage(file);
 	}
 	
 	/**
 	 * bluemix へ データを送り、分類されたデータを取得します。
 	 * @param file
 	 */
-	private Map<String, String> findSimilarImage(File file) {
-		Map<String, String> target = null;
+	private List<Map<String, String>> findSimilarImage(File file) {
+		List<Map<String, String>> result = new ArrayList<Map<String, String>>();
 		VisualRecognition service = new VisualRecognition(VisualRecognition.VERSION_DATE_2016_05_20);
 		service.setApiKey(apikey);
 		FindSimilarImagesOptions findImageOptions = new FindSimilarImagesOptions.Builder()
@@ -90,10 +91,11 @@ public class SampleRestController {
 		for(CollectionImage image : similarImages) {
 			if(hiscore < image.getScore()) {
 				hiscore = image.getScore();
-				target = image.getMetadata();
+				result.add(image.getMetadata());
 			}
 		}
-		System.out.println(target);
-		return target;
+		System.out.println(hiscore);
+		System.out.println(result);
+		return result;
 	}
 }
